@@ -1,0 +1,9 @@
+﻿{
+  "name": "task-management-simple",
+  "version": "1.0.0",
+  "description": "Simple task management web application using HTML, CSS, JavaScript, and localStorage.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Management</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Task Manager</p>
+        <h1>My Tasks</h1>
+      </div>
+      <button class="secondary-button" id="clearDoneButton" type="button">Clear done</button>
+    </header>
+
+    <section class="task-form-panel">
+      <form id="taskForm" class="task-form">
+        <input type="hidden" id="taskId" />
+
+        <label class="field title-field" for="titleInput">
+          <span>Task title</span>
+          <input id="titleInput" placeholder="Example: Complete project report" required />
+        </label>
+
+        <label class="field" for="descriptionInput">
+          <span>Description</span>
+          <textarea id="descriptionInput" rows="3" placeholder="Optional details"></textarea>
+        </label>
+
+        <div class="form-grid">
+          <label class="field" for="priorityInput">
+            <span>Priority</span>
+            <select id="priorityInput">
+              <option>Low</option>
+              <option selected>Medium</option>
+              <option>High</option>
+            </select>
+          </label>
+
+          <label class="field" for="statusInput">
+            <span>Status</span>
+            <select id="statusInput">
+              <option>To do</option>
+              <option>In progress</option>
+              <option>Done</option>
+            </select>
+          </label>
+
+          <label class="field" for="dueDateInput">
+            <span>Due date</span>
+            <input id="dueDateInput" type="date" />
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="primary-button" id="saveButton" type="submit">Add task</button>
+          <button class="secondary-button hidden" id="cancelButton" type="button">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="toolbar">
+      <div class="filters" id="filters">
+        <button class="chip active" data-filter="All" type="button">All</button>
+        <button class="chip" data-filter="To do" type="button">To do</button>
+        <button class="chip" data-filter="In progress" type="button">In progress</button>
+        <button class="chip" data-filter="Done" type="button">Done</button>
+      </div>
+      <input class="search" id="searchInput" placeholder="Search tasks" />
+    </section>
+
+    <section class="stats" id="stats"></section>
+    <section class="task-list" id="taskList"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
